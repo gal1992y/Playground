@@ -1,0 +1,353 @@
+{
+ "verticals": {
+  "casino": {
+   "label": "Crypto casino",
+   "accent": "#EC006A",
+   "motif": "chips",
+   "sector": "casino",
+   "people": "players",
+   "person": "player",
+   "venue": "casino",
+   "venues": "casinos",
+   "vip": "VIP",
+   "money": "deposits",
+   "labels": {
+    "what_we_see": "What your players do elsewhere",
+    "compare": "Here and elsewhere"
+   },
+   "data_route": "insight_sql.py --sector casino (labelled deposit addresses). Deeper: hidden-vip-packs (casino vertical), onchain-entity-prospect-reports for a wallet list or omnibus.",
+   "hero_ideas": [
+    "hidden VIPs: small deposits here, large at other casinos",
+    "share of players who fund two or more casinos",
+    "for every $1 deposited here, how much the same players deposit elsewhere (the top-1% share is visible in their own back office: use it only as support)"
+   ],
+   "urgency_hooks": [
+    "a rival's outage, paused withdrawals or licence loss",
+    "licensing deadlines in a market",
+    "a rival's bonus or rakeback change"
+   ],
+   "avoid": {
+    "whale": "say VIP or high-value player",
+    "gambler": "say player",
+    "addict": "never",
+    "spend": "the data is deposits: say deposits, not spend or wagering"
+   },
+   "sample": {
+    "title": "Your next VIPs already play *somewhere else*",
+    "subtitle": "What on-chain data shows about casino players like yours.",
+    "number": "1,296",
+    "line": "players deposit under $500 at one casino and *over $5,000 at others*.",
+    "enrich": [
+     "Spot VIPs at signup",
+     "Segment by real value",
+     "Personalise the first offer"
+    ],
+    "advertise": [
+     "Active at your rivals",
+     "In your licensed markets",
+     "Not cold traffic"
+    ]
+   }
+  },
+  "sportsbook": {
+   "label": "Sportsbook",
+   "accent": "#4CAF50",
+   "motif": "pitch",
+   "sector": "sportsbook",
+   "people": "bettors",
+   "person": "bettor",
+   "venue": "sportsbook",
+   "venues": "sportsbooks",
+   "vip": "VIP",
+   "money": "deposits",
+   "labels": {
+    "what_we_see": "What your bettors do elsewhere",
+    "compare": "Here and elsewhere"
+   },
+   "data_route": "insight_sql.py --sector sportsbook (same deposit labels as casinos: choose sports-led brands as the set). Sports trading on prediction markets comes from event_horizon.user_profiles (sports_bets) through sales-reports for a client, or hidden-vip-packs for a batch.",
+   "hero_ideas": [
+    "bettors who also trade sports on prediction markets",
+    "bettors funding two or more books before a big fixture",
+    "hidden VIPs: small stakes here, large elsewhere"
+   ],
+   "urgency_hooks": [
+    "the fixture calendar: a tournament, a season start, a final (date it)",
+    "a rival's market exit or licence change",
+    "prediction markets taking sports volume"
+   ],
+   "avoid": {
+    "whale": "say VIP or high-staking bettor",
+    "gambler": "say bettor",
+    "player": "sportsbooks say bettor or customer",
+    "spend": "the data is deposits: say deposits, not spend or wagering"
+   },
+   "sample": {
+    "title": "Your sharpest bettors also bet *somewhere else*",
+    "subtitle": "What on-chain data shows about sports bettors like yours.",
+    "number": "38%",
+    "line": "of bettors fund *two or more books* in the same month.",
+    "enrich": [
+     "Spot VIPs before kick-off",
+     "Segment by real stakes",
+     "Personalise odds boosts"
+    ],
+    "advertise": [
+     "Bettors active at rivals",
+     "Timed to the fixture list",
+     "Not cold traffic"
+    ]
+   }
+  },
+  "prediction": {
+   "label": "Prediction market",
+   "accent": "#0091EA",
+   "motif": "odds",
+   "sector": null,
+   "people": "traders",
+   "person": "trader",
+   "venue": "market",
+   "venues": "prediction markets",
+   "vip": "top trader",
+   "money": "volume",
+   "labels": {
+    "what_we_see": "What your traders do elsewhere",
+    "compare": "Here and elsewhere"
+   },
+   "data_route": "No cheap query here: prediction markets are contracts, not deposit addresses. Use hidden-vip-packs (prediction vertical: contract seeds, peer_sql) or, for a client, sales-reports (predictionmarkets_* and sports_bets columns). Proxy sets are other prediction markets.",
+   "hero_ideas": [
+    "traders who are small here and large on exchanges or perps",
+    "share of volume from the top 1% of traders",
+    "traders active on two or more markets"
+   ],
+   "urgency_hooks": [
+    "an election, a final or a macro print with a date",
+    "a regulator's ruling on event contracts",
+    "a rival's listing, fee or incentive change"
+   ],
+   "avoid": {
+    "bettor": "say trader",
+    "gambl": "prediction markets position as trading, not gambling",
+    "player": "say trader",
+    "whale": "say top trader"
+   },
+   "sample": {
+    "title": "Your smallest traders may be your *biggest*",
+    "subtitle": "What on-chain data shows about prediction-market traders like yours.",
+    "number": "2,140",
+    "line": "traders put under $500 here and *over $5,000 on exchanges and perps*.",
+    "enrich": [
+     "Spot top traders early",
+     "Segment by real capital",
+     "Personalise market alerts"
+    ],
+    "advertise": [
+     "Traders active on rivals",
+     "Around dated events",
+     "Not cold traffic"
+    ]
+   }
+  },
+  "exchange": {
+   "label": "Trading platform",
+   "accent": "#AA00FF",
+   "motif": "candles",
+   "sector": "exchange",
+   "people": "traders",
+   "person": "trader",
+   "venue": "exchange",
+   "venues": "exchanges",
+   "vip": "high-value trader",
+   "money": "deposits",
+   "labels": {
+    "what_we_see": "What your traders do elsewhere",
+    "compare": "Here and elsewhere"
+   },
+   "data_route": "insight_sql.py --sector exchange (global and regional exchange deposit labels). Deeper: hidden-vip-packs (exchange-major, exchange-local), whynow_sql.py from prospect-deck-check for flows and switchers after an event.",
+   "hero_ideas": [
+    "traders with a small first deposit here and six figures on other exchanges",
+    "share of a rival's recent users who already know you (warm win-back)",
+    "share of deposits from the top 1%"
+   ],
+   "urgency_hooks": [
+    "a rival's hack, outage or frozen withdrawals",
+    "a licensing deadline or product ban in a market",
+    "a rival withdrawing a product"
+   ],
+   "avoid": {
+    "player": "say trader or user",
+    "bettor": "say trader",
+    "gambl": "never for an exchange",
+    "whale": "fine for crypto-native teams; say high-value trader for regulated ones"
+   },
+   "sample": {
+    "title": "A $50 deposit can hide a *six-figure trader*",
+    "subtitle": "What on-chain data shows about exchange users like yours.",
+    "number": "4,870",
+    "line": "traders deposit under $500 here and *over $5,000 on other exchanges*.",
+    "enrich": [
+     "Spot high-value traders early",
+     "Segment by real volume",
+     "Personalise fee tiers"
+    ],
+    "advertise": [
+     "Traders funding rivals",
+     "In your licensed markets",
+     "Not cold traffic"
+    ]
+   }
+  },
+  "perps": {
+   "label": "Perps and derivatives",
+   "accent": "#C552FF",
+   "motif": "depth",
+   "sector": null,
+   "people": "traders",
+   "person": "trader",
+   "venue": "venue",
+   "venues": "perp venues",
+   "vip": "high-volume trader",
+   "money": "volume",
+   "labels": {
+    "what_we_see": "What your traders do elsewhere",
+    "compare": "Here and elsewhere"
+   },
+   "data_route": "Perp DEXs are contracts: use hidden-vip-packs (perps vertical, contract seeds) or, for a client, sales-reports (perps_* columns). For a centralised derivatives venue, insight_sql.py --sector exchange.",
+   "hero_ideas": [
+    "traders testing you with hundreds while running six figures on other venues",
+    "share of volume from the top 1%",
+    "traders whose volume is growing on a rival this month"
+   ],
+   "urgency_hooks": [
+    "a rival's points or incentive season ending (date it)",
+    "a rival's outage, exploit or liquidation event",
+    "a new listing or fee change"
+   ],
+   "avoid": {
+    "player": "say trader",
+    "bettor": "say trader",
+    "gambl": "never"
+   },
+   "sample": {
+    "title": "They test you with hundreds and trade *six figures elsewhere*",
+    "subtitle": "What on-chain data shows about perp traders like yours.",
+    "number": "912",
+    "line": "traders put under $500 here and *over $50,000 on other venues*.",
+    "enrich": [
+     "Spot high-volume traders early",
+     "Segment by real volume",
+     "Personalise fee and margin offers"
+    ],
+    "advertise": [
+     "Traders active on rivals",
+     "In your approved countries",
+     "Not cold traffic"
+    ]
+   }
+  },
+  "fx": {
+   "label": "FX and CFD broker",
+   "accent": "#FB8C00",
+   "motif": "waves",
+   "sector": "brokerage",
+   "people": "clients",
+   "person": "client",
+   "venue": "broker",
+   "venues": "brokers",
+   "vip": "high-value client",
+   "money": "funding",
+   "labels": {
+    "what_we_see": "What clients like yours do in crypto",
+    "compare": "Here and elsewhere"
+   },
+   "data_route": "Brokers rarely have an on-chain trail, so this is almost always proxy mode. insight_sql.py --sector brokerage reads retail brokerages and exchanges together: the set is the labelled brokerages or exchanges closest to the prospect's client base. State plainly that the numbers describe crypto-funding traders, not the broker's own book.",
+   "hero_ideas": [
+    "active crypto traders in the broker's markets who fund several venues",
+    "how concentrated funding is in the top 1% of traders",
+    "traders who fund a brokerage and an exchange in the same month"
+   ],
+   "urgency_hooks": [
+    "a regulator's leverage, marketing or licensing change (cite the regulator)",
+    "a volatility event or central-bank date",
+    "a rival broker adding crypto funding or crypto CFDs"
+   ],
+   "avoid": {
+    "player": "brokers say client",
+    "bettor": "say client or trader",
+    "gambl": "never for a regulated broker",
+    "whale": "say high-value client",
+    "bet": "say trade or position"
+   },
+   "sample": {
+    "title": "Your next high-value clients already *trade crypto*",
+    "subtitle": "What on-chain data shows about active traders in your markets.",
+    "number": "27%",
+    "line": "of active crypto traders fund *two or more venues* in a quarter.",
+    "enrich": [
+     "Identify high-value clients early",
+     "Segment by real funding",
+     "Personalise onboarding offers"
+    ],
+    "advertise": [
+     "Active traders in your markets",
+     "Within your licence",
+     "Not cold traffic"
+    ]
+   }
+  },
+  "default": {
+   "label": "Web3 company",
+   "accent": "#AA00FF",
+   "motif": "nodes",
+   "sector": null,
+   "people": "users",
+   "person": "user",
+   "venue": "platform",
+   "venues": "platforms",
+   "vip": "high-value user",
+   "money": "activity",
+   "labels": {},
+   "data_route": "Pick the closest vertical above, or use hidden-vip-packs seed modes (contract, holders, pixel, provider) for protocols, tokens and wallets.",
+   "hero_ideas": [
+    "users who are small here and large elsewhere"
+   ],
+   "urgency_hooks": [
+    "a dated event near the prospect"
+   ],
+   "avoid": {},
+   "sample": {
+    "title": "Your best users are bigger *somewhere else*",
+    "subtitle": "What on-chain data shows about users like yours.",
+    "number": "1,000+",
+    "line": "users are small here and *large elsewhere*.",
+    "enrich": [
+     "Spot high-value users early",
+     "Segment by real value",
+     "Personalise the first offer"
+    ],
+    "advertise": [
+     "Users active at rivals",
+     "In your markets",
+     "Not cold traffic"
+    ]
+   }
+  }
+ },
+ "aliases": {
+  "gambling": "casino",
+  "igaming": "casino",
+  "sports": "sportsbook",
+  "betting": "sportsbook",
+  "prediction_market": "prediction",
+  "predictionmarkets": "prediction",
+  "cefi": "exchange",
+  "trading": "exchange",
+  "trading_platform": "exchange",
+  "cex": "exchange",
+  "derivatives": "perps",
+  "dex": "perps",
+  "forex": "fx",
+  "cfd": "fx",
+  "broker": "fx",
+  "brokerage": "fx"
+ }
+}

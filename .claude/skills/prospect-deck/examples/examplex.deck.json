@@ -1,0 +1,312 @@
+{
+ "_comment": "Fixture to exercise the builder and the lint without Athena. Examplex and Rivalbet are invented, and so are the why-now figures (1 in 5, 1 in 10). The benchmark figures (1,296 of 133,000, 30%, 77%, $11.6K) are the result of one real test query on three unnamed casinos, 90 days to 15 Nov 2026, kept so the example reads like a real deck. Proxy mode: Examplex has no labelled on-chain trail, so the deck is built on three crypto casinos of its size. The review block records real reviewer runs on this fixture.",
+ "prospect": {
+  "name": "Examplex",
+  "domain": "examplex.example",
+  "logo": "examplex-logo.svg",
+  "logo_plate": "light",
+  "vertical": "casino",
+  "markets": [
+   "BR",
+   "AR",
+   "MX"
+  ]
+ },
+ "buyer": {
+  "company": "Examplex: a crypto casino, three years old, licensed offshore, most players in Latin America",
+  "role": "Head of CRM and VIP",
+  "language": "en",
+  "market": "Latin America",
+  "kpis": [
+   "VIP revenue",
+   "second-deposit rate"
+  ],
+  "tone": "crypto-native but professional; wary of vendor hype; will forward to the CEO"
+ },
+ "mode": "proxy",
+ "audience": "private",
+ "lang": "en",
+ "date": "November 2026",
+ "slides": [
+  {
+   "type": "cover",
+   "title": "Your next VIPs already play *somewhere else*",
+   "subtitle": "What on-chain data shows about players at crypto casinos like yours.",
+   "notes": "Open with the question, not with us: how do you tell a VIP from a tourist on day one?"
+  },
+  {
+   "type": "why_now",
+   "headline": "When a rival stumbles, *players look elsewhere*",
+   "events": [
+    {
+     "id": "rivalbet-pause",
+     "date": "22 Oct",
+     "text": "Rivalbet pauses withdrawals for 3 days",
+     "source": "Rivalbet statement"
+    }
+   ],
+   "effect": "In the two weeks after, *1 in 5* of its depositors funded another casino. In a normal fortnight it is 1 in 10.",
+   "basis": "Measured on-chain, 22 Oct to 4 Nov 2026, against the six weeks before.",
+   "notes": "Say what we measured. Do not say players left Rivalbet: a fifth funded another casino, most kept both. The window is open, nobody has won it."
+  },
+  {
+   "type": "hero",
+   "number": "1 in 100",
+   "line": "players deposit under $500 at one casino and *over $5,000 at others*.",
+   "basis": "1,296 of 133,000 players at three crypto casinos of Examplex's size, last 90 days. Not Examplex's own players.",
+   "notes": "This is the hidden VIP. Pause here. Ask how their VIP team would find these players today."
+  },
+  {
+   "type": "highlights",
+   "headline": "What one casino *can't see* about its players",
+   "items": [
+    {
+     "number": "30%",
+     "label": "play at two or more casinos",
+     "detail": "Loyalty is shared, not owned."
+    },
+    {
+     "number": "77%",
+     "label": "of deposits from the top 1%",
+     "detail": "A few players carry the revenue."
+    },
+    {
+     "number": "$11.6K",
+     "label": "median deposits elsewhere per hidden VIP",
+     "detail": "Invisible from inside one casino."
+    }
+   ],
+   "basis": "133,000 players at three crypto casinos of Examplex's size, last 90 days.",
+   "notes": "One line each. The middle card is the one a CRM lead repeats to their boss."
+  },
+  {
+   "type": "paths",
+   "headline": "Two ways to *act on it*",
+   "primary": "enrich",
+   "enrich": {
+    "title": "Know every player on day one",
+    "line": "We add what players do elsewhere to the profiles you already hold.",
+    "points": [
+     "Recognise VIPs at signup",
+     "Segment by real value",
+     "Tailor service and offers"
+    ]
+   },
+   "advertise": {
+    "title": "Reach proven players",
+    "line": "Advertise to adults who already play at comparable casinos.",
+    "points": [
+     "Active at comparable casinos",
+     "In the markets you serve",
+     "Not cold traffic"
+    ]
+   },
+   "notes": "Lead with Enrich for a CRM buyer. 'Limits' matters: the same data supports safer-gambling checks. Mention Advertise in one sentence."
+  },
+  {
+   "type": "next",
+   "headline": "See this for *your own market* in 20 minutes",
+   "ask": "Book 20 minutes. Nothing needed from you.",
+   "contact": {
+    "name": "Asaf Nadler",
+    "role": "Co-Founder and COO",
+    "email": "hello@addressable.io",
+    "link": "addressable.io"
+   },
+   "notes": "One ask, and it costs them nothing. The user sample comes second, under an agreement, once they have seen their market."
+  },
+  {
+   "type": "method",
+   "points": [
+    "Public on-chain deposits to labelled casino deposit addresses, 18 Aug to 15 Nov 2026. Aggregates only: no names, emails or account data.",
+    "Peer set: three crypto casinos of similar size, serving Latin America. Examplex's own players are not in this data.",
+    "A hidden VIP deposits under $500 at one casino and $5,000 or more at others in the same period.",
+    "Outliers are capped, and every figure covers at least 3 people."
+   ],
+   "sources": [
+    {
+     "name": "Rivalbet statement, 22 Oct 2026",
+     "url": "https://example.org/rivalbet-statement"
+    },
+    {
+     "name": "Rivalbet status page",
+     "url": "https://example.org/rivalbet-status"
+    }
+   ]
+  }
+ ],
+ "claims": [
+  {
+   "text": "1 in 100",
+   "value": 0.0097,
+   "kind": "query",
+   "source": "fixture: benchmark hidden_vips 1,296 / users 133,092",
+   "n_min": 1296,
+   "scope": "peers"
+  },
+  {
+   "text": "1,296",
+   "value": 1296,
+   "kind": "query",
+   "source": "fixture: benchmark.hidden_vips",
+   "n_min": 1296,
+   "scope": "peers"
+  },
+  {
+   "text": "133,000",
+   "value": 133092,
+   "kind": "query",
+   "source": "fixture: benchmark.users, rounded",
+   "n_min": 133092,
+   "scope": "peers"
+  },
+  {
+   "text": "30%",
+   "value": 0.2973,
+   "kind": "query",
+   "source": "fixture: benchmark multi_venue_users 39,565 / users 133,092",
+   "n_min": 39565,
+   "scope": "peers"
+  },
+  {
+   "text": "77%",
+   "value": 0.766,
+   "kind": "query",
+   "source": "fixture: benchmark usd_top1pct / usd_set",
+   "n_min": 1330,
+   "scope": "peers"
+  },
+  {
+   "text": "$11.6K",
+   "value": 11579,
+   "kind": "query",
+   "source": "fixture: benchmark.median_else_hidden",
+   "n_min": 1296,
+   "scope": "peers"
+  },
+  {
+   "text": "1 in 5",
+   "value": 0.2,
+   "kind": "query",
+   "source": "fixture: whynow_switchers n3 / n1",
+   "n_min": 412,
+   "scope": "peers"
+  },
+  {
+   "text": "1 in 10",
+   "value": 0.1,
+   "kind": "query",
+   "source": "fixture: whynow_switchers baseline, six weeks before",
+   "n_min": 205,
+   "scope": "peers"
+  },
+  {
+   "text": "under $500",
+   "value": 500,
+   "kind": "definition",
+   "source": "hidden-VIP definition, method slide",
+   "scope": "public"
+  },
+  {
+   "text": "over $5,000",
+   "value": 5000,
+   "kind": "definition",
+   "source": "hidden-VIP definition, method slide",
+   "scope": "public"
+  },
+  {
+   "text": "$5,000 or more",
+   "value": 5000,
+   "kind": "definition",
+   "source": "hidden-VIP definition, method slide",
+   "scope": "public"
+  },
+  {
+   "text": "90 days",
+   "value": 90,
+   "kind": "definition",
+   "source": "query window, 18 Aug to 15 Nov 2026",
+   "scope": "public"
+  },
+  {
+   "text": "3 days",
+   "value": 3,
+   "kind": "url",
+   "source": "https://example.org/rivalbet-statement",
+   "scope": "public"
+  },
+  {
+   "text": "at least 3 people",
+   "value": 3,
+   "kind": "definition",
+   "source": "guardrail",
+   "scope": "public"
+  }
+ ],
+ "template": [
+  "20 minutes",
+  "Book 20",
+  "top 1%",
+  "two or more",
+  "Two ways",
+  "two weeks",
+  "day one",
+  "three crypto casinos",
+  "one casino",
+  "six weeks"
+ ],
+ "events": [
+  {
+   "id": "rivalbet-pause",
+   "date": "2026-10-22",
+   "title": "Rivalbet pauses withdrawals for 3 days",
+   "status": "verified",
+   "figures": {
+    "days": 3
+   },
+   "sources": [
+    {
+     "name": "Rivalbet statement",
+     "kind": "company",
+     "url": "https://example.org/rivalbet-statement"
+    },
+    {
+     "name": "Rivalbet status page",
+     "kind": "company",
+     "url": "https://example.org/rivalbet-status"
+    }
+   ]
+  }
+ ],
+ "review": {
+  "buyer": {
+   "company": "Examplex",
+   "role": "Head of CRM and VIP",
+   "language": "en",
+   "market": "Latin America"
+  },
+  "rounds": 2,
+  "scores": {
+   "relevance": 4,
+   "clarity": 4,
+   "credibility": 3,
+   "urgency": 3,
+   "fit": 4,
+   "action": 4
+  },
+  "verdict": "revise",
+  "takeaway": "About 1 in 100 players at casinos like mine look small but deposit over $5,000 elsewhere, and this vendor says it can flag them at signup.",
+  "changes": [
+   "Round 1 (scores 2,4,2,2,2,3): peers were crypto casinos shown to a fiat operator; kicker said 'your players' on peer data; hero had no base; the Rivalbet effect had no baseline; the ask needed the buyer's user data; vague regulation event. All fixed, and each is now a lint rule or a rule in the guides.",
+   "Round 2 (scores above): wording fixed after the review and not re-reviewed: 'spend' to 'deposits', 'licensed markets' to 'markets you serve', the why-now headline no longer says 'right now', 'limits' removed."
+  ],
+  "open_objections": [
+   "If you can see what my players do at rivals, can rivals target my players? Is my company in your data?",
+   "How is a player matched at signup, what must I provide, and what share of my base would match?",
+   "'Aggregates only' on the method slide against per-player enrichment in the product: which is it?",
+   "No customer result or reference.",
+   "The top-1% share is something I can already see in my own back office."
+  ],
+  "_note": "Kept as a real 'revise': lint_deck.py --final fails on this fixture on purpose. The open objections need approved answers from Addressable (see references/buyer-review.md, standing objections), not better wording."
+ }
+}

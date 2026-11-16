@@ -1,0 +1,14 @@
+{
+  "skill_name": "prospect-deck",
+  "evals": [
+    {"id": 1, "prompt": "Make me a deck for Examplex, a fiat-first crypto casino in Brazil with no on-chain footprint we can find. It's going to their Head of CRM, who is Brazilian. I want to send it this week.",
+     "expected_output": "Proxy-mode deck in Portuguese (or a recorded language decision), casino vertical, peer set confirmed with the user, basis lines on data slides, Enrich as primary path, buyer review recorded, lint --final OK, PDF/HTML/PPTX delivered, nothing sent.",
+     "files": []},
+    {"id": 2, "prompt": "We just finished the hidden VIP pack for OKX. Can you turn it into something short I can send their CMO and also a version I can post on LinkedIn?",
+     "expected_output": "Reuses the pack's numbers as claims (no new queries), exchange vertical, Advertise as primary path for a CMO, a private deck and a second public deck without the prospect's name, logo or own data, share message and LinkedIn post drafted.",
+     "files": []},
+    {"id": 3, "prompt": "Quick pitch deck for an FX/CFD broker in Cyprus, compliance-heavy, I'm meeting their COO on Thursday. Make it urgent.",
+     "expected_output": "fx vertical (clients, not players), proxy mode on brokerages/exchanges stated plainly, urgency only from verified regulator or dated events or a data trend (or urgency_skipped), no invented commercial terms, formal tone, method slide present.",
+     "files": []}
+  ]
+}
